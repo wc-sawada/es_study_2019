@@ -111,7 +111,8 @@
           <div class="wrap">
             <h2><strong>今回のゴール</strong></h2>
             <p class="text-intro">
-              ESの基礎が分かるようになること( ｀ー´)ノ！！！！！
+              ESちょっとデキル( ｀ー´)ノ！！！！！<br>
+              ESちょっとシッテル( ｀ー´)ノ！！！！！
             </p>
           </div>
           <!-- .end .wrap -->
@@ -327,11 +328,226 @@
             <p class="text-intro">
               (1) varの宣言と代入<br>
               (2) varの初期化を含めた宣言&再代入<br>
-              (3) 複数変数の宣言<br>
+              (3) 複数変数の宣言
             </p>
           </div>
           <!-- .end .wrap -->
         </section>
+
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>3-2-1.データ型について</strong></h2><br>
+            <p class="text-intro">
+              JavaScriptのデータ型には大きく分けると<br>
+              プリミティブ型 (primitive) とオブジェクト型 (object) の２つが存在する。
+            </p>
+            <div class="code">
+              // 数値
+              var val1 = 123; // number
+              // 文字列
+              var val2 = "テキストで～す"; // string
+              // ブール
+              var val3 = true; // boolean
+              // オブジェクト
+              var val4 = { key: "value" } // object
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>3-2-2.データ型について</strong></h2><br>
+            <p class="text-intro">
+              【プリミティブ型 (primitive)】<br>
+              ・数 (number)<br>
+              ・文字列 (string)<br>
+              ・ブール型 (boolean)<br>
+              ・null (ES以降は null という型になる) <small>※typeofで確認するとobjectと返却される為、注意</small><br>
+              ・undefined<br><br>
+              【オブジェクト型 (object)】<br>
+              ・オブジェクト(object)<br>
+              ・関数(function)<br><br>
+              これらのデータ型は typeof演算子 で判別する事が出来ます。
+            </p>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>3-2-3.データ型について</strong></h2><br>
+            <p class="text-intro">
+              オブジェクト型 (object) について<br><br>
+              【Wikipedia の場合】<br>
+              関連するデータを束ね、代入、演算、手続き（関数やメソッドなど）を<br>
+              介した受け渡しといった操作の対象にでき、またメッセージの受け手になれる実体<br><br>
+              【サイ本 (O’Reilly) の場合】<br>
+              名前の付けられた値を集めたもの<br>
+            </p>
+            <div class="code">
+              var obj = { 
+                key1 : "value1", // keyが名前(キー)
+                key1 : "value2" // valueが値(バリュー)
+              };
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>3-2-4.データ型について</strong></h2><br>
+            <h3><strong>～ハンズオンタイム～</strong></h3><br>
+            <p class="text-intro">
+              (1) プリミティブ型の宣言とtypeof演算子確認<br>
+              (2) 型変換(キャスト)をして型の確認&再代入<br>
+              (3) オブジェクト型の宣言と確認<br>
+              (4) オブジェクトにデータの追加と削除
+            </p>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>3-3-1.配列について</strong></h2><br>
+            <p class="text-intro">
+              変数はオブジェクトを含めて、１つの値しか格納出来ないが、<br>
+              配列は複数の値を格納する為に使用される。 <br>
+              配列にはindexが割り振られていて、indexによりアクセスする事も出来る。
+            </p>
+            <div class="code">
+              // ID一覧
+              var idList = [12, 34, 78, 90];
+
+              // ユーザー一覧
+              var userList = ["taro", "hanako", "bangu", "sawada"];
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>3-3-2.配列について</strong></h2><br>
+            <p class="text-intro">
+              【配列に格納出来る値】<br>
+              配列に格納するデータ型に制約は無く、文字列・数値・ブール・オブジェクト・関数いずれも保持する事が可能。<br><br>
+
+              【配列の定義について】<br>
+              配列の定義方法は「配列リテラル式」と「new式」の２つ。<br>
+              new式の場合、Arrayインスタンスが出来上がる為、コンストラクタが呼び出されますが実際出来上がる物は同じ。<br>
+              <small>※new式は少し古いやり型で今はコードの可読性を良くする為に配列リテラル式(直接定義)が主流であり好まれます。</small>
+            </p>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>3-3-3.配列について</strong></h2><br>
+            <p class="text-intro">
+              【配列の種類について】<br>
+              avaScriptには通常の配列以外に２つの配列が存在する。<br><br>
+              【多次元配列】<br>
+              多次元配列は配列の中に配列を含める事により多次元にアクセスが出来る。
+            </p>
+            <div class="code">
+              var list = [
+                ["りんご", "いちご"], // 一つ目の配列は赤い食べ物
+                ["キウイ", "メロン"] // 二つ目の配列は緑の食べ物
+              ];
+              console.log(list[0][0]); // りんご
+              console.log(list[1][0]); // キウイ
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>3-3-4.配列について</strong></h2><br>
+            <p class="text-intro">
+              【連想配列 (Dictionary)】<br>
+              JavaScriptの連想配列は少しややこしくなりますが、オブジェクトと同じ。 indexキーが文字列に変わるだけです。<br><br>
+              実際のプロジェクトでは配列とオブジェクトの掛け合わせが主流。
+            </p>
+            <div class="code">
+              var obj = {
+                key1 : "value1", // key が名前(キー)
+                key2 : "value2" // value が値(バリュー)
+              };
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>3-3-5.配列について</strong></h2><br>
+            <h3><strong>～ハンズオンタイム～</strong></h3><br>
+            <p class="text-intro">
+              (1) 配列の宣言と定義<br>
+              (2) 配列の長さを取得<br>
+              (3) for文で回す<br>
+              (4) オブジェクトを組み合わせた多次元配列にして、for..in文で回す
+            </p>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>3-4-1.関数とスコープについて</strong></h2><br>
+            <p class="text-intro">
+              JavaScriptは関数型プログラミング言語とも呼ばれている。<br>
+            </p>
+            <div class="code">
+              function myFunc(name) {
+                var message = "I'm " + name;
+                console.log(message);
+              }
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>3-4-2.関数とスコープについて</strong></h2><br>
+            <p class="text-intro">
+              【関数とは (MDNより)】<br>
+              関数は JavaScript の基本的な構成要素のひとつ。<br>
+              また関数は、JavaScript の手続き ― つまり、タスクや値計算を実行する文の集まり。
+            </p>
+            <div class="code">
+              // 名前付き関数
+              function 関数名(引数) {
+                処理内容;
+                return 戻り値;
+              }
+              // 無名関数
+              var 変数名 = function(引数) {
+                処理内容;
+                return 戻り値;
+              }
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         <section>
