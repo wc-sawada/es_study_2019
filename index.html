@@ -537,16 +537,506 @@
           <!-- .end .wrap -->
         </section>
 
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>3-4-3.関数とスコープについて</strong></h2><br>
+            <p class="text-intro">
+              【スコープとは】<br>
+              スコープとは変数の有効範囲の事。<br>
+              プログラムのどの場所から参照出来るかの概念。<br><br>
+              【スコープの種類】<br>
+              グローバルスコープとローカルスコープ。<br>
+              JavaScriptではローカルスコープを関数スコープと呼び、<br>
+              ECMAScript以降ではローカルスコープをブロックスコープ呼ぶ。<br><br>
+              【グローバルスコープとは】<br>
+              関数外のスコープの事。関数外で宣言された変数や関数はグローバルスコープになる。<br><br>
+              【ローカルスコープとは】<br>
+              関数内のスコープの事。関数内で定義された変数や関数はローカルスコープになる。
+            </p>
+          </div>
+          <!-- .end .wrap -->
+        </section>
 
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>3-4-4.関数とスコープについて</strong></h2><br>
+            <h3><strong>～ハンズオンタイム～</strong></h3><br>
+            <p class="text-intro">
+              (1) 名前付き関数の定義と実行 <br>
+              (2) 無名関数の定義と実行<br>
+              (3) スコープの確認
+            </p>
+          </div>
+          <!-- .end .wrap -->
+        </section>
 
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>4.ECMAScriptハンズオン</strong></h2><br>
+            <p class="text-intro">
+              ここからはES6をベースとした基礎ハンズオンを行います！<br><br>
+              (1)  let/const宣言 (let and const) <br>
+              (2) forEach/map/filterについて<br>
+              (3) アロー関数 (Arrows functions)<br>
+              (4) 関数のデフォルト引数 (default + rest + spread) <br>
+              (5) テンプレート文字列 (Template Strings)<br>
+              (6) オブジェクトのプロパティについて<br>
+              (7) モジュール構文 (modules)  <br>
+              (8) class構文 (classes)<br>
+              (9) 非同期関数 (Promise/async/await)
+            </p>
+          </div>
+          <!-- .end .wrap -->
+        </section>
 
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>4-1-1.let/const宣言について</strong></h2><br>
+            <p class="text-intro">
+              従来のJavaScriptでは変数の宣言は var のみだが<br>
+              ECMAScriptでは let と const が追加された。
+            </p>
+            <div class="code">
+              var x = 1;
+              let y = 1;
+              const z = 1;
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
 
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>4-1-2.let/const宣言について</strong></h2><br>
+            <p class="text-intro">
+              letは var と比べて、宣言周り、スコープ周りに大きな違いがある。<br>
+              varの場合、どこでも宣言し使用出来るが、letはブロック内でしか使用出来ない。<br>
+              constは定数で、再宣言も再代入も出来ない。スコープに関してもletと同様にブロック内でしか使えない。
+            </p>
+          </div>
+          <!-- .end .wrap -->
+        </section>
 
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>4-1-3.let/const宣言について</strong></h2><br>
+            <h3><strong>～ハンズオンタイム～</strong></h3><br>
+            <p class="text-intro">
+              (1) var、let、constを宣言&代入 <br>
+              (2) var、let、constを再代入出来るか確認<br>
+              (3) var、let、constを再宣言出来るか確認<br>
+              (4) ブロックを作成しブロック内での値のスコープの確認
+            </p>
+          </div>
+          <!-- .end .wrap -->
+        </section>
 
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>4-2-1.forEach/map/filterについて</strong></h2><br>
+            <p class="text-intro">
+              ※ほかにreduceというループ処理があるが省きます。<br>
+            </p>
+            <div class="code">
+              let userList = ["taro" "hanako", "sawada"];
+              // forEach
+              userList.forEach(function(element, index, array) {
+                console.log(element);
+              });
 
+              // map
+              userList.map(function(element, index, array) {
+                console.log(element);
+              });
 
+              // filter
+              userList.filter(function(element, index, array) {
+                console.log(element);
+              });
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
 
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>4-2-2.forEach/map/filterについて</strong></h2><br>
+            <p class="text-intro">
+              【forEachについて】 <br>
+              forEach には配列の中で存在する要素だけを取り出すという重要な性質がある。<br>
+              が、他のループ処理より遅いという事、連想配列(オブジェクト)だと使えない為、あまり使われる事がない。<br>
 
+            </p>
+            <div class="code">
+              let userList = ["taro" "hanako", "sawada"];
+              // forEach
+              配列.forEach(function(配列の要素, 配列のインデックス, 元の配列) {
+                // 処理
+              });
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>4-2-3.forEach/map/filterについて</strong></h2><br>
+            <p class="text-intro">
+              【mapについて】 <br>
+              ループ処理というより新しい配列を作成するイメージ。<br>
+              forEachとの大きな違いとしては、配列が作成され、戻り値がある。<br>
+              (forEachはただループされるだけ)
+            </p>
+            <div class="code">
+              // map
+              配列.map(function(配列の要素, 配列のインデックス, 元の配列) {
+                // 処理
+              });
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>4-2-4.forEach/map/filterについて</strong></h2><br>
+            <p class="text-intro">
+              【filterについて】 <br>
+              必要な条件のものだけ抽出するループ処理。
+            </p>
+            <div class="code">
+              // filter
+              配列.filter(function(配列の要素, 配列のインデックス, 元の配列) {
+                // 要素が10以上のもの
+                return (配列の要素 >= 10);
+              });
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>4-2-5.forEach/map/filterについて</strong></h2><br>
+            <h3><strong>～ハンズオンタイム～</strong></h3><br>
+            <p class="text-intro">
+              (1) forEachでループ処理<br>
+              (2) mapでループ処理<br>
+              (3) filterでループ処理<br>
+              (4) forEachとmapの違い
+            </p>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>4-3-1.アロー関数について</strong></h2><br>
+            <p class="text-intro">
+              ECMAScriptで最も重要な関数。<br>
+              ReactやVueでも使用される。
+            </p>
+            <div class="code">
+              const byTwo2 = array.map((number) => {
+                return number * 2;
+              });
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>4-3-2.アロー関数について</strong></h2><br>
+            <p class="text-intro">
+              矢印(アロー, =>)を使って記述し、function 式より短い構文で同様の内容を記述するこができる。<br><br>
+              thisの指すものが通常のfunctionとは異なる。<br>
+              function：呼び出し方でthisが変わる。<br>
+              アロー関数：常にその周囲と同じスコープになる。<br>
+              (thisについての説明は省きます。)
+            </p>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>4-3-3.アロー関数について</strong></h2><br>
+            <h3><strong>～ハンズオンタイム～</strong></h3><br>
+            <p class="text-intro">
+              (1) 通常のfunctionで書いてみる<br>
+              (2) functionを省略<br>
+              (3) 引数が1つの場合の省略<br>
+              (4) 引数が無い場合の書き方<br>
+              (5) 関数内が1文の場合の省略
+            </p>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>4-4-1.関数のデフォルト引数について</strong></h2><br>
+            <p class="text-intro">
+              関数呼び出し時に引数が無かった場合はデフォルト値が使用される。
+            </p>
+            <div class="code">
+              function buy(item, amount = 1) {
+                console.log(item);
+                console.log(amount);
+              }
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>4-4-2.関数のデフォルト引数について</strong></h2><br>
+            <p class="text-intro">
+              【Rest parametersについて】<br>
+              呼び出される関数に...と書くと、余った引数が全て配列で入ってくる。<br>
+              この...のことをRest parametersという。<br><br>
+
+              【スプレッド演算子について】<br>
+              呼び出す関数に...と書くと、配列を展開して呼び出し先に渡される。<br>
+              この...のことスプレッド演算子という。<br><br>
+              ※今回は詳しい解説は省きます。
+            </p>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>4-4-3.関数のデフォルト引数について</strong></h2><br>
+            <h3><strong>～ハンズオンタイム～</strong></h3><br>
+            <p class="text-intro">
+              (1) 引数が渡されていない場合<br>
+              (2) 従来のJavaScriptでの定義方法<br>
+              (3) ECMAScriptでの定義方法<br>
+              (4) ECMAScriptでオブジェクトや配列を使って定義
+            </p>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>4-5-1.テンプレート文字列について</strong></h2><br>
+            <p class="text-intro">
+              テンプレートリテラルは文字列を作成する為の機能。<br>
+              オプションで、タグを付けることで文字列作成をカスタマイズする事が出来る。<br>
+              インジェクション攻撃を防いだり、より高度な文字列作成が出来る。
+            </p>
+            <div class="code">
+              let message = `私の名前は${name}で、${age}才です。`;
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>4-5-2.テンプレート文字列について</strong></h2><br>
+            <h3><strong>～ハンズオンタイム～</strong></h3><br>
+            <p class="text-intro">
+              (1) 従来の文字列の結合<br>
+              (2) テンプレート文字列での表示
+            </p>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>4-6-1.オブジェクトのプロパティについて</strong></h2><br>
+            <p class="text-intro">
+              プロパティについて<br><br>
+              ECMAScriptになりプロパティもとても便利に。<br>
+              ECMAScriptでは単独記述、キーの変更、メソッドの追加が出来るようになりました。
+            </p>
+            <div class="code">
+              let player = {
+                firstname: "さわだ",
+                [key]: 1,
+                [method]: action()
+              };
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>4-5-2.テンプレート文字列について</strong></h2><br>
+            <h3><strong>～ハンズオンタイム～</strong></h3><br>
+            <p class="text-intro">
+              (1) 従来のプロパティの定義<br>
+              (2) ECMAScriptでのプロパティ定義(省略)<br>
+              (3) プロパティのキーを動的に変更<br>
+              (4) キーを変更する事により、様々な実装<br>
+              (5) プロパティにメソッドを追加<br>
+              (6) 4,5 を組み合わせる
+            </p>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>4-7-1.モジュール構文について</strong></h2><br>
+            <p class="text-intro">
+              ESではコンポーネントの定義を行うことができ、機能を元に別のファイルにわけることが出来る。<br>
+            </p>
+            <div class="code">
+              // script.js
+              export function add(number) {
+                return 10 + number;
+              }
+
+              // main.js
+              import { add } from "./script.js";
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>4-7-2.モジュール構文について</strong></h2><br>
+            <p class="text-intro">
+              一つのモジュールは一つのファイルに対応する。<br>
+              モジュールは変数や関数などを外部にエクスポートできる。<br>
+              別のモジュールで宣言された変数や関数などをインポートすることもできる。<br>
+              モジュールは非同期で、必要とされるまで中のコードは実行されない。
+            </p>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>4-7-3.モジュール構文について</strong></h2><br>
+            <h3><strong>～ハンズオンタイム～</strong></h3><br>
+            <p class="text-intro">
+              (1) 通常の関数<br>
+              (2) モジュール化
+                2-1 呼び出し
+                2-2 エイリアスでの呼び出し
+                2-3 ワイルドカードでの呼び出し
+              (3) export default
+            </p>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>4-8-1.class構文について (classes)</strong></h2><br>
+            <p class="text-intro">
+              ES6のクラス構文は従来のクラス宣言に比べてシンプルに理解しやすく記述できる。<br>
+            </p>
+            <div class="code">
+              class Profile {
+                constructor(name, age) {
+                  this.name = name;
+                  this.age = age;
+                }
+
+                getGender() {
+                  console.log("man");
+                }
+              }
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>4-8-2.class構文について (classes)</strong></h2><br>
+            <p class="text-intro">
+              class構文は次の機能がサポートされる。<br><br>
+
+              ・extends(継承)<br>
+              ・super(親クラス呼び出し)<br>
+              ・constructor(初期化)<br>
+              ・instance method(インスタンスメソッド)<br>
+              ・class method(クラスメソッド、静的メソッド)<br>
+            </p>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>4-8-3.class構文について (classes)</strong></h2><br>
+            <h3><strong>～ハンズオンタイム～</strong></h3><br>
+            <p class="text-intro">
+              (1) 従来のJavaScriptのクラス宣言<br>
+              (2) prototypeでメソッドを加える(省略)<br>
+              (3) ECMAScriptの場合のclass構文<br>
+              (4) クラスの継承
+            </p>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>4-9-1.非同期関数(Promise, async/await</strong></h2><br>
+            <p class="text-intro">
+              ECMAScriptの非同期処理は、Promiseとasync/await がある。<br>
+            </p>
+            <div class="code">
+              // Promiseの宣言
+              let getUser = new Promise(resolve => {
+                resolve("さわだ");
+              });
+
+              // async/awaitを定義
+              async function main() {
+                let user = await getUser;
+                console.log(user);
+              }
+
+              // 実行
+              main();
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>4-9-2.非同期関数(Promise, async/await)</strong></h2><br>
+            <p class="text-intro">
+              【Promiseについて】<br>
+              ・ES2015(ES6)で追加された機能<br>
+              ・非同期関数を扱う為のインターフェース<br>
+              ・無法地帯だった非同期処理を統一的に扱い定義<br>
+              ・非同期処理の操作として、非同期処理の成功時(resolve)、失敗時(reject)の処理を明示的に書くことが出来る<br>
+              ・非同期処理の並行処理以外に then() を使う事により直列処理にさせることが出来る
+            </p>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="slide-top">
+          <div class="wrap">
+            <h2><strong>4-9-3.非同期関数(Promise, async/await)</strong></h2><br>
+            <p class="text-intro">
+              【Promiseについて】<br>
+              ・ES2017で追加された機能<br>
+              ・ES2017以降 async/await が非同期処理の軸となる。<br>
+              ・内部的にはPromiseを使用していて、Promiseベース<br>
+              ・await を使う事により、Promiseの処理が完了するのを待機する事が出来る<br>
+              ・非同期処理が同期処理のような見た目になり、ソースコードの見通しが良くなる
+            </p>
+          </div>
+          <!-- .end .wrap -->
+        </section>
 
 
 
