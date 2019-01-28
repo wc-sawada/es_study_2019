@@ -1,15 +1,11 @@
 @charset "UTF-8";
-/* ???????????? */
 .text-subtitle,
 .text-landing {
   text-transform: none;
 }
-
-/* ????? */
 .strikethrough {
   text-decoration: line-through;
 }
-/* ????? */
 .text-left {
   text-align: left;
 }
