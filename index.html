@@ -127,7 +127,7 @@
           <div class="wrap">
             <h2><strong>1.ECMAScriptについて</strong></h2><br>
             <p class="text-intro">
-              ECMAScriptはJavaScriptを標準化させた仕様の言語。<br><br>
+              ECMAScriptは<em>JavaScriptを標準化させた</em>仕様の言語。<br><br>
               MDNは一通り目を通しておきましょう！<br>
               <a target="_blank" href="https://developer.mozilla.org/ja/docs/Web/JavaScript">https://developer.mozilla.org/ja/docs/Web/JavaScript</a><br><br>
               ECMAScriptについて<br>
@@ -140,15 +140,16 @@
           <div class="wrap">
             <h2><strong>1-1.ECMAScriptの誕生について</strong></h2><br>
             <p class="text-intro">
-              JavaScriptが誕生したのは1995年。<br>
+              JavaScriptが誕生したのは1995年。<br><br>
               Netscape社がWebで実行出来るスクリプト言語という事で開発された。<br>
               その後、Internet Explorerに搭載されて浸透していったが、<br>
-              当時のブラウザは今と違って、独自機能や拡張が多くて互換性がとても低い状態だった。<br>
-              そこで、Ecma International という標準化団体が中心となり、標準化をしていき、<br>
+              当時のブラウザは今と違って、独自機能や拡張が多くて互換性がとても低い状態だった。<br><br>
+              そこで、<em>Ecma International</em>という標準化団体が中心となり、標準化をしていき、<br>
               1997年にECMA-262(ES1)が誕生。<br><br>
               ES2015とかES6とかES7とか色々あるけど何が最新なのか？<br>
-              →ES2018(ES9)が最新です。ES5とか何！ES2015ならES5じゃないの！って感じですが<br>
-              次のスライドで歴史について説明します。
+              →ES2018(ES9)が最新です。(今年ES2019リリース予定)<br>
+              　ES5とか何！ES2015ならES5じゃないの！って感じですが<br>
+              　次のスライドで歴史について説明します。
             </p>
           </div>
           <!-- .end .wrap -->
@@ -167,7 +168,7 @@
             <h2><strong>1-3.仕様策定プロセスの変化</strong></h2><br>
             <p class="text-intro">
               【ES2015以前】<br>
-              -> 全ての仕様の合意が取れてから一括リリース<br>
+              -> 全ての仕様の合意が取れてから一括リリース<br><br>
               【ES2016以降】<br>
               -> 合意がとれた仕様から順次リリースし、 毎年リリースする策定プロセスに変化。<br><br>
 
@@ -198,12 +199,12 @@
             <h2><strong>2-1.ES2015(ES6)で追加された機能</strong></h2><br>
             <p class="text-intro">
               ES2015(ES6)は、ECMAScriptの基本バージョンとなる為、沢山の機能がある。<br><br>
-              ・アロー関数 (Arrows functions) <br>
-              ・class構文 (classes) <br>
-              ・let/const宣言 (let and const) <br>
-              ・Promise<br>
-              ・モジュール構文 (modules)<br>
-              ・関数のデフォルト引数 (default + rest + spread) <br>
+              <em>・アロー関数 (Arrows functions)</em> <br>
+              <em>・class構文 (classes)</em> <br>
+              <em>・let/const宣言 (let and const)</em> <br>
+              <em>・Promise</em><br>
+              <em>・モジュール構文 (modules)</em><br>
+              <em>・関数のデフォルト引数 (default + rest + spread)</em> <br>
               ・ジェネレータ <br>
               ・配列展開 (Array Spread) <br>
               ・テンプレート文字列 (Template Strings)<br>
@@ -234,7 +235,7 @@
             <p class="text-intro">
               ここからはES8ではなくES2017と年表記で説明します。※一応ES8とも言われている。<br>
               ES2017もES2016同様に機能追加は少ないのですが便利な機能がいくつか追加。<br><br>
-              一番重要なのが、「Async functions (Async/Await)」<br>
+              一番重要なのが、<em>「Async functions (Async/Await)」</em><br>
               こちらは非同期関数で、Promiseと組み合わせる事でES2016以前で問題になっていた非同期処理が改善されている。<br><br>
                その他に<br>
                ・String padding<br>
@@ -328,7 +329,7 @@
             <h2><strong>3-2-1.データ型について</strong></h2><br>
             <p class="text-intro">
               JavaScriptのデータ型には大きく分けると<br>
-              プリミティブ型 (primitive) とオブジェクト型 (object) の２つが存在する。
+              <em>プリミティブ型 (primitive)</em> と<em>オブジェクト型 (object)</em> の２つが存在する。
             </p>
             <img class="alignleft" src="./static/images/code/3-2-1.png" alt="">
           </div>
@@ -339,13 +340,13 @@
           <div class="wrap">
             <h2><strong>3-2-2.データ型について</strong></h2><br>
             <p class="text-intro">
-              【プリミティブ型 (primitive)】<br>
+              <em>【プリミティブ型 (primitive)】</em><br>
               ・数 (number)<br>
               ・文字列 (string)<br>
               ・ブール型 (boolean)<br>
               ・null (ES以降は null という型になる) <small>※typeofで確認するとobjectと返却される為、注意</small><br>
               ・undefined<br><br>
-              【オブジェクト型 (object)】<br>
+              <em>【オブジェクト型 (object)】</em><br>
               ・オブジェクト(object)<br>
               ・関数(function)<br><br>
               これらのデータ型は typeof演算子 で判別する事が出来ます。
@@ -432,7 +433,8 @@
             <h2><strong>3-3-4.配列について</strong></h2><br>
             <p class="text-intro">
               【連想配列 (Dictionary)】<br>
-              JavaScriptの連想配列は少しややこしくなりますが、オブジェクトと同じ。 indexキーが文字列に変わるだけです。<br><br>
+              JavaScriptの連想配列は少しややこしくなりますが、オブジェクトと同じ。<br>
+              indexキーが文字列に変わるだけ。<br><br>
               実際のプロジェクトでは配列とオブジェクトの掛け合わせが主流。
             </p>
             <img class="alignleft" src="./static/images/code/3-3-4.png" alt="">
@@ -573,7 +575,7 @@
           <div class="wrap">
             <h2><strong>4-2-1.forEach/map/filterについて</strong></h2><br>
             <p class="text-intro">
-              ※ほかにreduceというループ処理があるが省きます。<br>
+              ※ほかに<em>reduce</em>というループ処理があるが省きます。<br>
             </p>
             <img class="alignleft" src="./static/images/code/4-2-1.png" alt="">
           </div>
@@ -585,9 +587,8 @@
             <h2><strong>4-2-2.forEach/map/filterについて</strong></h2><br>
             <p class="text-intro">
               【forEachについて】 <br>
-              forEach には配列の中で存在する要素だけを取り出すという重要な性質がある。<br>
-              が、他のループ処理より遅いという事、連想配列(オブジェクト)だと使えない為、あまり使われる事がない。<br>
-
+              forEachには<em>配列の中で存在する要素だけ</em>を取り出すという重要な性質がある。<br>
+              が、他のループ処理より遅いという事、連想配列(オブジェクト)だと使えない為、あまり使われる事がない。
             </p>
             <img class="alignleft" src="./static/images/code/4-2-2.png" alt="">
           </div>
@@ -599,9 +600,9 @@
             <h2><strong>4-2-3.forEach/map/filterについて</strong></h2><br>
             <p class="text-intro">
               【mapについて】 <br>
-              ループ処理というより新しい配列を作成するイメージ。<br>
-              forEachとの大きな違いとしては、配列が作成され、戻り値がある。<br>
-              (forEachはただループされるだけ)
+              ループ処理というより<em>新しい配列を作成する</em>イメージ。<br>
+              forEachとの大きな違いとしては、<em>配列が作成され、戻り値がある。</em><br>
+              (forEachは、ただループされるだけ)
             </p>
             <img class="alignleft" src="./static/images/code/4-2-3.png" alt="">
           </div>
@@ -613,7 +614,7 @@
             <h2><strong>4-2-4.forEach/map/filterについて</strong></h2><br>
             <p class="text-intro">
               【filterについて】 <br>
-              必要な条件のものだけ抽出するループ処理。
+              <em>必要な条件のものだけ抽出</em>するループ処理。
             </p>
             <img class="alignleft" src="./static/images/code/4-2-6.png" alt="">
           </div>
@@ -691,11 +692,11 @@
             <h2><strong>4-4-2.関数のデフォルト引数について</strong></h2><br>
             <p class="text-intro">
               【Rest parametersについて】<br>
-              呼び出される関数に...と書くと、余った引数が全て配列で入ってくる。<br>
+              呼び出される関数に...と書くと、<em>余った引数が全て配列</em>で入ってくる。<br>
               この...のことをRest parametersという。<br><br>
 
               【スプレッド演算子について】<br>
-              呼び出す関数に...と書くと、配列を展開して呼び出し先に渡される。<br>
+              呼び出す関数に...と書くと、<em>配列を展開して呼び出し先に渡される。</em><br>
               この...のことスプレッド演算子という。<br><br>
               ※今回は詳しい解説は省きます。
             </p>
@@ -721,7 +722,7 @@
           <div class="wrap">
             <h2><strong>4-5-1.テンプレート文字列について</strong></h2><br>
             <p class="text-intro">
-              テンプレートリテラルは文字列を作成する為の機能。<br>
+              テンプレートリテラルは<em>文字列を作成する為の機能。</em><br>
               オプションで、タグを付けることで文字列作成をカスタマイズする事が出来る。<br>
               インジェクション攻撃を防いだり、より高度な文字列作成が出来る。
             </p>

@@ -9,3 +9,8 @@
 .text-left {
   text-align: left;
 }
+p em {
+  font-style: normal;
+  font-weight: bold;
+  color: red;
+}
