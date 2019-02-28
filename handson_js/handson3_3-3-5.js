@@ -19,7 +19,7 @@ var userList = [];
 // オブジェクトの代入
 userList[0] = { id: 12, name: "taro", age: 19 }
 userList[1] = { id: 34, name: "hanako", age: 22 }
-userList[2] = { id: 56, name: "ucan", age: 39 }
+userList[2] = { id: 56, name: "sawada", age: 26 }
 
 for (var key in userList) {
   console.log(userList[key]);
